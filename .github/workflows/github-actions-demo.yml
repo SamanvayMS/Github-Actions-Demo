@@ -32,7 +32,7 @@ name: 'Build and Deploy to Cloud Run'
 on:
   push:
     branches:
-      - '"main"'
+      - 'main'
 
 env:
   PROJECT_ID: 'forex-trading-system-415722'
@@ -91,4 +91,3 @@ jobs:
 
           echo ${{ steps.deploy.outputs.url }}
 
-          
