@@ -60,7 +60,7 @@ jobs:
         name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@v2' # google-github-actions/auth@v2
         with:
-          credentials_json: '${{ env.GCP_JSON_PATH }}'
+          credentials_json: ${{ env.GCP_JSON_PATH }}
 
       # BEGIN - Docker auth and build
       #
