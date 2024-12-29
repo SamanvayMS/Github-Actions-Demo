@@ -74,6 +74,7 @@ jobs:
           DOCKER_TAG="$${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.SERVICE_NAME }}:${{ github.sha }}"
           docker build --tag "${DOCKER_TAG}" .
           docker push "${DOCKER_TAG}"
+          echo "::set-env name=IMAGE::$DOCKER_TAG"
       - name: 'Deploy to Cloud Run'
 
         # END - Docker auth and build
@@ -89,5 +90,5 @@ jobs:
       - name: 'Show output'
         run: |-
 
-          echo ${{ steps.deploy.outputs.url }}
+            echo ${{ steps.deploy.outputs.url }}
 
